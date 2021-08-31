@@ -1,0 +1,32 @@
+{
+    "name": "waynestate/news-api-php",
+    "description": "Connector for News API",
+    "version": "2.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Web Communications",
+            "email": "web@wayne.edu"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4":{
+            "Waynestate\\Api\\":"src"
+        }
+    },
+    "require": {
+        "php": ">=7.3",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Waynestate\\Api\\NewsServiceProvider"
+            ]
+        }
+    }
+}
