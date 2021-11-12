@@ -1,22 +1,22 @@
-news-api-php
+people-api-php
 ================
 
-Connector to interact with the News API
+Connector to interact with the People API
 
 ### Example Usage
 
 ```php
 <?php
-use Waynestate\Api\News;
+use Waynestate\Api\People;
 
-// News API
-$news = new News(NEWS_API_KEY);
+// People API
+$people = new People(PEOPLE_API_KEY);
 
 // List of releases
-$releases = $news->request('releases', array('perPage' => '2'));
+$releases = $people->request('releases', array('perPage' => '2'));
 var_dump($releases);
 
 // Individual Release
-$release = $news->request('releases', array('id' => '1'));
+$release = $people->request('releases', array('id' => '1'));
 var_dump($release);
 ```

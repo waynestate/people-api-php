@@ -3,7 +3,7 @@
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\TransferException;
 
-class News
+class People
 {
     /** @var  array */
     protected $config;
@@ -36,7 +36,7 @@ class News
     {
         $this->config = !empty($config) ? $config : $this->getEnvVariables();
         $this->developer_key = $this->config['key'];
-        $this->endpoint = !empty($this->config['endpoint']) ? $this->config['endpoint'] : 'https://news.wayne.edu/api/v1/';
+        $this->endpoint = !empty($this->config['endpoint']) ? $this->config['endpoint'] : 'https://people.wayne.edu/api/v1/';
         $this->payload_dir = $this->config['cache'];
         $this->payload_file = $this->payload_dir . 'payload.json';
         $this->client = new Client();
@@ -55,9 +55,9 @@ class News
     private function getEnvVariables()
     {
         return [
-            'key' => getenv('NEWS_API_KEY'),
-            'cache' => getenv('NEWS_API_CACHE'),
-            'endpoint' => getenv('NEWS_API_ENDPOINT'),
+            'key' => getenv('PEOPLE_API_KEY'),
+            'cache' => getenv('PEOPLE_API_CACHE'),
+            'endpoint' => getenv('PEOPLE_API_ENDPOINT'),
         ];
     }
 
@@ -133,7 +133,7 @@ class News
     }
 
     /**
-     * Get the payload from the News API
+     * Get the payload from the People API
      *
      * @return mixed
      */
